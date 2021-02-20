@@ -1,37 +1,37 @@
 class Temperature:
     def __init__(self, temp):
 
-        self.temp_cel = temp
-        self.temp_far = 0
+        self.cel = temp
+        self.farh = 0
 
     def temp(self):
-        return self.temp_cel
+        return self.cel
 
     def display(self):
-        print(self.temp_cel)
+        print(self.cel)
 
     def convert(self):
 
-        self.temp_far = (1.8 * self.temp_cel) + 32
+        self.temp_far = (1.8 * self.cel) + 32
         return round(self.temp_far, 3)
 
     def __add__(self, other):
-        value = self.temp_cel + other.temp_cel
+        value = self.cel + other.cel
         return Temperature(value)
 
     def __eq__(self, other):
-        if self.temp_cel == other.temp_cel:
+        if self.cel == other.cel:
               return True
         return False
 
     def __lt__(self, other):
-        if self.temp_cel < other.temp_cel:
+        if self.cel < other.cel:
             return True
         return False
 
 
-t1 = Temperature(45)
-print(t1.convert())
+# t1 = Temperature(43)
+# print(t1.convert())
 
 
 
