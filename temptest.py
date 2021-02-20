@@ -1,30 +1,31 @@
+
 import pytest
-from temp import Temperature
+from temperature1 import Temperature
 
 
 @pytest.fixture
-def get_t1():
+def temp1():
     return Temperature(35)
 
 
 @pytest.fixture
-def get_t2():
+def temp2():
     return Temperature(22)
 
 
-def test_add(get_t1, get_t2):
-    res = get_t1 + get_t2
+def test_add(temp1, temp2):
+    res = temp1 + temp2
     assert Temperature(57) == res
 
 
-def test_convert(get_t1, get_t2):
-    assert get_t1.convert() == 95
-    assert get_t2.convert() == 71.6
+def test_convert(temp1, temp2):
+    assert temp1.convert() == 95
+    assert temp2.convert() == 71.6
 
 
-def test_equal(get_t1, get_t2):
-    assert (get_t1 == get_t2) == False
+def test_equal(temp1, temp2):
+    assert (temp1 == temp2) == False
 
 
-def test_lesser(get_t1, get_t2):
-    assert (get_t1 < get_t2) == False
+def test_lesser(temp1, temp2):
+    assert (temp1< temp2) == False
