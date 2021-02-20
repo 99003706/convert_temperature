@@ -2,17 +2,13 @@ class Temperature:
     def __init__(self, temp):
 
         self.cel = temp
-        self.farh = 0
 
     def temp(self):
         return self.cel
 
-    def display(self):
-        print(self.cel)
-
     def convert(self):
 
-        self.temp_far = (1.8 * self.cel) + 32
+        self.temp_far = (9/5 * self.cel) + 32
         return round(self.temp_far, 3)
 
     def __add__(self, other):
@@ -32,6 +28,7 @@ class Temperature:
 
 # t1 = Temperature(43)
 # print(t1.convert())
+
 
 
 
